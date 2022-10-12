@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -7,10 +7,18 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  @Input()  img = "valor inicial"
+@Input() imagen='';
+@Output() error404 = new EventEmitter();
+cat404='https://img.freepik.com/vector-premium/404-error-no-encontrado-gato-sentado-sosteniendo-enchufe-tomacorriente_626340-65.jpg?w=2000';
+flag=false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  errorImage(){
+
+    alert("ups Algo ha sucedido");
+    this.error404.emit(this.cat404)
   }
 
 }

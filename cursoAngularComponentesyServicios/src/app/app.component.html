@@ -1,3 +1,5 @@
-<input type="text" [(ngModel)]="imgParent">
+<input type="text"  [(ngModel)]="img" name="" id="">
 <br>
-<app-input [img]="imgParent"></app-input>
+<app-input (error404)="imgError($event)" [imagen]="img"></app-input>
+
+
