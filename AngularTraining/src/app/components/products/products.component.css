@@ -1,0 +1,7 @@
+.products--grid{
+  display: flex;
+  flex-wrap: wrap;
+}
+figure{
+  max-width: 400px;
+}

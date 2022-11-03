@@ -1,3 +1,4 @@
+import { MainDataService } from './../../services/main-data.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product.model';
 
@@ -7,28 +8,31 @@ import { Product } from '../models/product.model';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
-  constructor() { }
+  carrito:Product[];
+  carritoAPI:Array<any>=[];
+  productos:Product[]=[];
+  productosAPI:any;
+  total =0;
+  constructor(private productoService:MainDataService) {
+    this.carrito = this.productoService.getCart();
+    this.productos = this.productoService.getProducts();
+  }
 
   ngOnInit(): void {
+    this.productoService.getProductsAPI().subscribe((resp:any)=>{
+      this.carritoAPI = resp;
+      console.log(this.carritoAPI);
+
+    })
+
   }
-  productos:Product[]=[{
-    id:1,
-    name:"Producto1",
-    imagen:"https://img.freepik.com/vector-premium/404-error-no-encontrado-gato-sentado-sosteniendo-enchufe-tomacorriente_626340-65.jpg?w=2000",
-    precio:11
-  },
-  {
-    id:2,
-    name:"Producto2",
-    imagen:"https://img.freepik.com/vector-premium/404-error-no-encontrado-gato-sentado-sosteniendo-enchufe-tomacorriente_626340-65.jpg?w=2000",
-    precio:11
-  },
-  {
-    id:3,
-    name:"Producto3",
-    imagen:"https://img.freepik.com/vector-premium/404-error-no-encontrado-gato-sentado-sosteniendo-enchufe-tomacorriente_626340-65.jpg?w=2000",
-    precio:11
-  }]
+
+
+  onProductAdd(producto:Product){
+    this.productoService.addProduct(producto);
+    this.total = this.productoService.getTotal();
+  }
+
+
 
 }

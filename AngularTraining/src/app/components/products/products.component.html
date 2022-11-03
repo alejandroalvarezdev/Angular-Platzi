@@ -1,3 +1,14 @@
-<div class="products--grid">
-  <app-product [product]="producto" *ngFor="let producto of productos" ></app-product>
-</div>
+<h2>Productos en el carrito {{carrito.length}}</h2>
+<h3>Total {{total}}</h3>
+<h2>Precio</h2>
+<!-- <div class="products--grid">
+  <app-product [product]="producto" *ngFor="let producto of productos" (addProduct)="onProductAdd($event)" ></app-product>
+</div> -->
+<!-- <div class="products--grid">
+  <figure *ngFor="let products of carritoAPI" >
+    <img [src]="products.images[1]"
+          alt="{{products.description}}">
+          <figcaption><h3>$ {{products.price}}</h3></figcaption>
+    <figcaption><h4>{{products.description}}</h4></figcaption>
+</figure>
+</div> -->

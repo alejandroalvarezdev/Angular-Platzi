@@ -1,0 +1,7 @@
+.container{
+  background-color: rgb(12, 66, 110);
+  height: 100vh;
+}
+mat-form-field{
+  margin: 2rem;
+}
