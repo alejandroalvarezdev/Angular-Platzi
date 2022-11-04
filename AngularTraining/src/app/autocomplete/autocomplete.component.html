@@ -1,0 +1,15 @@
+<h1>Autocomplete Works</h1>
+<div class="container">
+  <form >
+  <mat-form-field appearance="fill">
+    <mat-label>Input</mat-label>
+    <input
+      matInput
+      [formControl]="control"
+       [matAutocomplete]="autocomplete" >
+  </mat-form-field>
+  <mat-autocomplete #autocomplete="matAutocomplete">
+    <mat-option  *ngFor="let employee of filUs | async" [value]=employee >{{employee}}</mat-option>
+  </mat-autocomplete>
+</form>
+</div>

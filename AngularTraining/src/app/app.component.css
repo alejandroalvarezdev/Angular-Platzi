@@ -1,0 +1,7 @@
+form{
+  background-color: rgb(29, 95, 148);
+  height: 100vh;
+}
+.mat-form-field{
+  margin: 5rem;
+}
