@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import { AutoV3Component } from './auto-v3/auto-v3.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { AutocompleteComponent } from './autocomplete/autocomplete.component';
     ProductComponent,
     ProductsComponent,
     AutocompleteComponent,
+    AutoV3Component,
 
   ],
   imports: [
